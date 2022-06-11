@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { AgregarComponent } from './agregar.component';
 
 @Component({
   selector: 'app-usuario',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+    this.dialog.open(AgregarComponent);
+  }
 
   ngOnInit(): void {
   }

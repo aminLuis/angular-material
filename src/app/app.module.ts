@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,10 +19,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BodyComponent } from './body/body.component';
 import { RoleComponent } from './components/role/role.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { AgregarComponent } from './components/usuario/agregar.component';
 
 const routes:Routes = [
   {path: 'usuario-component', component:UsuarioComponent},
@@ -32,7 +37,8 @@ const routes:Routes = [
     DashboardComponent,
     BodyComponent,
     RoleComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +54,10 @@ const routes:Routes = [
     MatMenuModule,
     MatDialogModule,
     RouterModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

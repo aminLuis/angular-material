@@ -5,8 +5,8 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#" routerLink="/usuario-component">Role usuario</a>
-      <a mat-list-item href="#" routerLink="/role-component">Usuario</a>
+      <a mat-list-item href="#" routerLink="/role-component">Role usuario</a>
+      <a mat-list-item href="#" routerLink="/usuario-component">Usuario</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -16,7 +16,7 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>angular-material</span>
