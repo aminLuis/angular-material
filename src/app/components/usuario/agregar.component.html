@@ -1,19 +1,19 @@
 <h1 mat-dialog-title>Agregar usuario</h1>
   <div mat-dialog-content style="height: 210px;">
     
-    <form>
+    <form [formGroup]="form_usuario_nuevo" (ngSubmit)="save_usuario()">
 
       <div class="container-form">
         <mat-form-field hintLabel="Max 60 characters" appearance="fill">
           <mat-label>Ingrese nombre de usuario</mat-label>
-          <input matInput #input_nombre maxlength="60" placeholder="Nombre">
+          <input formControlName="nombre" matInput #input_nombre maxlength="60" placeholder="Nombre">
           <mat-hint align="end">{{input_nombre.value?.length || 0}}/60</mat-hint>
         </mat-form-field>
       
         <mat-form-field appearance="fill">
           <mat-label>ACTIVO</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select formControlName="activo">
+            <mat-option *ngFor="let activ of activo" [value]="activ">{{activ}}</mat-option>
           </mat-select>
           <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
         </mat-form-field>
@@ -24,14 +24,14 @@
 
         <mat-form-field hintLabel="Max 40 characters" appearance="fill">
           <mat-label>Ingrese correo del usuario</mat-label>
-          <input matInput #input_correo maxlength="40" placeholder="Correo">
+          <input formControlName="correo" matInput #input_correo maxlength="40" placeholder="Correo">
           <mat-hint align="end">{{input_correo.value?.length || 0}}/40</mat-hint>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Seleccione role usuario</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select formControlName="id_rol">
+            <mat-option *ngFor="let rol of roles" [value]="rol.id">{{rol.nombre}}</mat-option>
           </mat-select>
           <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
         </mat-form-field>
