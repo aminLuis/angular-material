@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +27,7 @@ import { BodyComponent } from './body/body.component';
 import { RoleComponent } from './components/role/role.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { AgregarComponent } from './components/usuario/agregar.component';
+import { TablaUsuariosComponent } from './components/usuario/tabla-usuarios.component';
 
 const routes:Routes = [
   {path: 'usuario-component', component:UsuarioComponent},
@@ -39,7 +42,8 @@ const routes:Routes = [
     BodyComponent,
     RoleComponent,
     UsuarioComponent,
-    AgregarComponent
+    AgregarComponent,
+    TablaUsuariosComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,8 @@ const routes:Routes = [
     MatSelectModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

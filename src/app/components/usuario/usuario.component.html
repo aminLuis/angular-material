@@ -1,1 +1,10 @@
-<button mat-raised-button color="accent" (click)="openDialog()">Nuevo</button>
+<button mat-raised-button color="accent" (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+
+  
+<br><br>
+<app-tabla-usuarios
+  [usuarios]="usuarios"
+  [displayedColumns]="displayedColumns"
+></app-tabla-usuarios>
